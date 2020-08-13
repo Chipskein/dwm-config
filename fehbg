@@ -1,0 +1,3 @@
+#!/bin/sh
+feh --no-fehbg --bg-scale '/home/chipskein/Pictures/a74bb39d9dc71611cf59d05dad94d4b1.png'
+
