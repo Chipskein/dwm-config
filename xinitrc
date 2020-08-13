@@ -34,7 +34,7 @@ fi
 
 exec xcompmgr &
 while true ; do
-    xsetroot -name "$(date + "%H:%M:%S") | $USER";
+    xsetroot -name "$(date + '%H:%M:%S') | $USER";
     sleep 1;
 done &
 exec /home/chipskein/fehbg & exec dwm
