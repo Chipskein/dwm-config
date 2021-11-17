@@ -8,19 +8,22 @@ static const int topbar             = 0;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=17" };
 static const char dmenufont[]       = "monospace:size=17";
 /*colors*/
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
-static const char col_cyan2[]       = "#4dccff";
-static const char col_green2[]      = "#3dc13d";
-static const char col_green1[]      = "#237223";
+static const char col_gray1[]       = "#222222";//escuro
+static const char col_gray2[]       = "#444444";//escuro--
+static const char col_gray3[]       = "#bbbbbb";//escuro -3
+static const char col_gray4[]       = "#eeeeee";//branco
+static const char col_cyan[]        = "#005577";//azul-marinho
+static const char col_cyan2[]       = "#4dccff";//azuldms
+static const char col_green2[]      = "#3dc13d";//verde claro
+static const char col_green1[]      = "#237223";//verde escuro
+
+static const char col_blue2[]      = "#56A4DC";
+static const char col_blue1[]      = "#3689C7";//escuro
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray1, col_green2, col_green1 },
-	[SchemeSel]  = { col_gray4, col_green1,col_green2},
+	[SchemeNorm] = { col_gray1, col_blue2, col_blue1 },
+	[SchemeSel]  = { col_gray3, col_blue1,col_blue2},
 };
 
 /* tagging */
@@ -61,11 +64,20 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_green2, "-nf", col_gray4, "-sb", col_green1, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_blue2, "-nf", col_gray4, "-sb", col_blue1, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
+/* commands */
+static const char *scrotcmd[]  = { "scrot", "-t", "25", NULL };
+static const char *scrotfocusedcmd[]  = { "scrot", "--focused", NULL };
 
+/* modifier     key         function    argument */
 static Key keys[] = {
 	/* modifier                     key        function        argument */
+	/*scrot*/
+	{ 0,            				XK_Print,   spawn,      {.v = scrotcmd } },
+	{ ShiftMask,    				XK_Print,   spawn,      {.v = scrotfocusedcmd } },
+	{ ControlMask,  				XK_Print,   spawn,      SHCMD("sleep 1s;scrot --select") },
+	
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },

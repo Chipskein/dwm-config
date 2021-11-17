@@ -5,7 +5,7 @@ my dwm config
 <head>
 </head>
 <body>
-    <img src="back.png">
+    <img src="screenshot.png">
     <h2>codesource: https://git.suckless.org/dwm</h2>
     <h1>Keyboard shortcuts<h1>
     <pre>
