@@ -1,7 +1,6 @@
 # DWM
 This is a my [ dwm ](https://dwm.suckless.org/) config to backup and to share with my homies :)
 
-  ![screensho](/screenshot.png)
 ## Need Packages
 1. [ xcompmgr ](https://wiki.archlinux.org/title/xcompmgr)
 2. [ scrot ](https://wiki.archlinux.org/title/Screen_capture#scrot)
