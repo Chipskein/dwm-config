@@ -6,6 +6,8 @@ This is a my [ dwm ](https://dwm.suckless.org/) config to backup and to share wi
 1. [ xcompmgr ](https://wiki.archlinux.org/title/xcompmgr)
 2. [ scrot ](https://wiki.archlinux.org/title/Screen_capture#scrot)
 3. [ feh ](https://wiki.archlinux.org/title/feh)
+4. [ xdotool ](https://man.archlinux.org/man/xdotool.1)
+5. [ xbindkeys](https://wiki.archlinux.org/title/Xbindkeys)
 
 ## ModKey => Super key L  
 Keybind | Do 
