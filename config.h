@@ -7,23 +7,23 @@ static const int showbar            = 5;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=17" };
 static const char dmenufont[]       = "monospace:size=17";
-/*colors*/
+/*Colors*/
 static const char col_gray1[]       = "#222222";//escuro
 static const char col_gray2[]       = "#444444";//escuro--
 static const char col_gray3[]       = "#bbbbbb";//escuro -3
 static const char col_gray4[]       = "#eeeeee";//branco
-static const char col_cyan[]        = "#005577";//azul-marinho
-static const char col_cyan2[]       = "#4dccff";//azuldms
-static const char col_green2[]      = "#3dc13d";//verde claro
-static const char col_green1[]      = "#237223";//verde escuro
-
-static const char col_blue2[]      = "#56A4DC";
-static const char col_blue1[]      = "#3689C7";//escuro
-
+//static const char col_cyan[]        = "#005577";//azul-marinho
+//static const char col_cyan2[]       = "#4dccff";//azuldms
+//static const char col_green2[]      = "#3dc13d";//verde claro
+//static const char col_green1[]      = "#237223";//verde escuro
+//static const char col_blue2[]      = "#56A4DC";//azul
+//static const char col_blue1[]      = "#3689C7";//azul escuro
+static const char col_yellow2[]      = "#f5b31b";//amarelo
+static const char col_yellow1[]      = "#a87b14";//amarelo escuro
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray1, col_blue2, col_blue1 },
-	[SchemeSel]  = { col_gray3, col_blue1,col_blue2},
+	[SchemeNorm] = { col_gray1, col_yellow2, col_yellow1 },
+	[SchemeSel]  = { col_gray3, col_yellow1,col_yellow2},
 };
 
 /* tagging */
@@ -64,7 +64,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_blue2, "-nf", col_gray4, "-sb", col_blue1, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_yellow2, "-nf", col_gray4, "-sb", col_yellow1, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 /* commands */
 static const char *scrotcmd[]  = { "scrot", "-t", "25", NULL };
